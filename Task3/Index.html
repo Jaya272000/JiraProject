@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+  <style>
+  *{
+     padding:0;
+     margin:0;
+     font-family:arial;
+     box-sizing: border-box;
+  }
+   body{
+        height:85vh;
+        display:grid;
+        place-items:center;
+   }
+   table{
+        width:1000px;
+        box-shadow: -1px 12px 12px -6px rgba(0,0,0,0.5);
+   }
+   table ,td,th{
+        padding:20px;
+        border: 1px solid lightgray;
+        border-collapse: collapse;
+        text-align:center;
+        cursor:pointer;
 
+   }
+   td{
+      font size:18px;
+   }
+   th{
+       background-color:Black;
+       color:white;
+   }
+   tr:nth-child(odd){
+           background-color;lightgray;
+   }
+   tr:nth-child(odd):hover{
+         background-color:Black;
+         color:white;
+         transform:scale(1.5);
+         transition:transform 300ms ease-in;
+   }
+      tr:nth-child(even){
+           background-color:#ededed;
+   }
+   tr:nth-child(even)hover{
+         background-color:lightgray;
+         transform:scale(1.5);
+         transition:transform 300ms ease-in
+  }
+   h1{
+      font-weight:900;
+      text-align:center;
+      background-color: Black;
+      color:#fff;
+      padding: 10px,0px;
+      font-size:50px
+
+   }
+
+  </style>
+<body>
+     <h1>Create a UI to show the tickets from the database</h1>
+     <table>
+      <tr>
+         <th>Ticket Name </th>
+         <th> Name</th>
+         <th>Description</th>
+         <th>Status</th>
+         <th>Reporter</th>
+
+      </tr>
+        {% for item in data %}
+      <tr>
+       <td>{{item.Ticket_name}}</td>
+       <td>{{item.Name}}</td>
+       <td>{{item.Description}}</td>
+       <td>{{item.status}}</td>
+       <td>{{item.Reporter}}</td>
+      </tr>
+        {% endfor %}
+
+     </table>
+</body>
+  </html>
