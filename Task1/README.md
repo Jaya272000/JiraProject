@@ -44,13 +44,30 @@ Install pip
 ```bash
   sudo apt-get -y install python3-pip
 ```
-    
 
-Make a database on mysql named "Jira_project" and a table inside it named "Fetched_data".
+## How code is running:-
+Step1:- For the first the code requires the jira and mysql-connector-python libraries. You can install them using pip:-
+        Install  jira mysql-connector
+        
+Step2:- Set up the MySQL database. Ensure that you have a MySQL server running and update the code with the appropriate database  
+                            (host, username, password, and database name) 
 
-Write a final pyton code to execute and put my data in that data base.
+step3:-Set up the Jira connection. Update the Jira server URL and authentication credentials (email and API token).
 
-Final Output Be like :-
+step4:-Create the MySQL database table. The code will create a table named "FetchIssue_data" in the specified database if it doesn't already exist. The table structure and column definitions are provided in the create_table_query variable.
+
+step5:-This code executes a SQL query to count the number of rows in the "FetchIssue_data" table and stores the result in the variable row_count.
+
+step6:-Fetch issues from the Jira project with the key "JAYAS".
+
+step7:- Check if there are existing issues in the database this is beacuse to ignore duplicate issue insert.
+
+step8:-Insert new records or update existing ones based on the condition.Commit the changes to the database.
+
+step9:-Print a message confirming the successful insertion of data.
+
+step10:- Finall output be like:-
+
 |Number|Name|Description|Reporter|Status|Due_date|Assigne|
 | :-------| :-------|:-------| :-------| :-------| :-------|:-------|
 |JAYAS-1|ticket-1|test55|Jaya Srivastava|Done|None|jaya Srivastava
